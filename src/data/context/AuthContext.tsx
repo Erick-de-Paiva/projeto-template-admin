@@ -1,3 +1,4 @@
+import route from 'next/router'
 import { createContext, useState } from "react";
 import firebase from "../../firebase/config";
 import Usuario from "../../model/Usuario";
@@ -13,19 +14,27 @@ async function usuarioNormalizado(usuarioFirebase: firebase.User): Promise<Usuar
     const token = await usuarioFirebase.getIdToken()
     return {
         uid: usuarioFirebase.uid,
-        nome: usuarioFirebase.displayName,
         email: usuarioFirebase.email,
+        nome: usuarioFirebase.displayName,
         token,
         provedor: usuarioFirebase.providerData[0].providerId,
         imagemUrl: usuarioFirebase.photoURL
     }
 }
 
-const function AuthProvider(props) {
+export function AuthProvider(props) {
     const [usuario, setUsuario] = useState<Usuario>(null)
 
     async function loginGoogle() {
-        console.log('login google...')
+        const resp = await firebase.auth().signInWithPopup(
+            new firebase.auth.GoogleAuthProvider()
+        )
+
+        if(resp.user?.email) {
+            const usuario = await usuarioNormalizado(resp.user)
+            setUsuario(usuario)
+            route.push('/')
+        }
     }
 
     return (
