@@ -41,3 +41,11 @@ export const IconeAtencao = (tamanho = 6) => (
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
     </svg>
 )
+
+export const IconeGoogle = (
+    <svg  xmlns="http://www.w3.org/2000/svg" width={24} height={24} 
+        fill={"currentColor"} viewBox={"0 0 24 24"}>
+        {/* Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free */}
+        <path d="M20.283 10.356h-8.327v3.451h4.792c-.446 2.193-2.313 3.453-4.792 3.453a5.27 5.27 0 0 1-5.279-5.28 5.27 5.27 0 0 1 5.279-5.279c1.259 0 2.397.447 3.29 1.178l2.6-2.599c-1.584-1.381-3.615-2.233-5.89-2.233a8.91 8.91 0 0 0-8.934 8.934 8.907 8.907 0 0 0 8.934 8.934c4.467 0 8.529-3.249 8.529-8.934 0-.528-.081-1.097-.202-1.625"/>
+    </svg>
+)
