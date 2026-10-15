@@ -11,8 +11,6 @@
   </p>
 </div>
 
-<br>
-
 ---
 
 ## 🎯 Sobre o Projeto
